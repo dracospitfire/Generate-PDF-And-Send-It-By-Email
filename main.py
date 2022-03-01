@@ -36,12 +36,12 @@ with open(attachment_path, 'rb') as ap:
         subtype=mime_subtype,
         filename=os.path.basename(attachment_path))
 
-#mail_server = smtplib.SMTP_SSL("smtp.gmail.com")
-#mail_pass = 'jtlvugftutewwail' #getpass.getpass('Password? ')
-#mail_server.login(sender, mail_pass)
+mail_server = smtplib.SMTP_SSL("smtp.gmail.com")
+mail_pass = 'jtlvugftutewwail' #getpass.getpass('Password? ')
+mail_server.login(sender, mail_pass)
 
-#mail_server.send_message(message)
-#mail_server.quit()
+mail_server.send_message(message)
+mail_server.quit()
 
 fruit = {
   "elderberries": 1,
@@ -55,7 +55,7 @@ fruit = {
 
 report = SimpleDocTemplate("A Complete Inventory of My Fruit.pdf")
 styles = getSampleStyleSheet()
-report_title = Paragraph("I like this Shit!", styles["h1"])
+report_title = Paragraph("A Complete Inventory of My Fruit", styles["h1"])
 
 table_data = []
 for k, v in fruit.items():
